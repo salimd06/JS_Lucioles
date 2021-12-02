@@ -177,7 +177,8 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-app.use(express.static(path.join(__dirname, '/')));
+//app.use(express.static(path.join(__dirname, '/')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(request, response, next) { //Pour eviter les problemes de CORS/REST
     response.header("Access-Control-Allow-Origin", "*");
     response.header("Access-Control-Allow-Headers", "*");
