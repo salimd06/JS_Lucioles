@@ -34,8 +34,9 @@ async function listDatabases(client){
 async function v0(){
     const mongoName = "lucioles"                   //Nom de la base
     //const mongoUri = 'mongodb://localhost:27017/'; //URL de connection		
-    //const mongoUri = 'mongodb://10.9.128.189:27017/'; //URL de connection		
-    const mongoUri = 'mongodb+srv://menez:6poD2R2gil@cluster0.x0zyf.mongodb.net/lucioles?retryWrites=true&w=majority';
+    //const mongoUri = 'mongodb://10.9.128.189:27017/'; //URL de connection
+    var mongoUri = process.env.MONGOLAB_URI;
+    //const mongoUri = 'mongodb+srv://menez:6poD2R2gil@cluster0.x0zyf.mongodb.net/lucioles?retryWrites=true&w=majority';
 
     //Now that we have our URI, we can create an instance of MongoClient.
     const mg_client = new MongoClient(mongoUri,
