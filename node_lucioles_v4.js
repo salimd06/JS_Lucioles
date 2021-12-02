@@ -232,8 +232,9 @@ app.get('/esp/:what', function (req, res) {
 //================================================================
 //==== Demarrage du serveur Web  =======================
 //================================================================
-// L'application est accessible sur le port 3000
+// L'application est accessible sur le port 3000 mais pas que !!!
 
-app.listen(3000, () => {
-    console.log('Server listening on port 3000');
+// cf https://stackoverflow.com/questions/4840879/nodejs-how-to-get-the-servers-port
+var listener = app.listen(process.env.PORT || 3000, function(){
+    console.log('Express Listening on port ' + listener.address().port); //Listening on port 8888
 });
