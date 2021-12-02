@@ -181,9 +181,10 @@ app.use(bodyParser.json())
 //This lets you serve static files (such as HTML, CSS and JavaScript)
 //from the directory you specify. In this case, the files will be
 //served from a folder called public : 
+//app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static(path.join(__dirname, '/')));
-//app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(function(request, response, next) { //Pour eviter les problemes de CORS/REST
     response.header("Access-Control-Allow-Origin", "*");
     response.header("Access-Control-Allow-Headers", "*");
@@ -198,7 +199,7 @@ app.use(function(request, response, next) { //Pour eviter les problemes de CORS/
     
 // Route / => Le node renvoie la page HTML affichant les charts
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/ui_lucioles.html'));
+    res.sendFile(path.join(__dirname + '/ui_lucioles.html'));
 });
 
 
@@ -206,7 +207,7 @@ app.get('/', function (req, res) {
 //     /esp/temp?who=80%3A7D%3A3A%3AFD%3AC9%3A44
 // Exemple d'utilisation de routes dynamiques
 //    => meme fonction pour /esp/temp et /esp/light
-app.get('esp/:what', function (req, res) {
+app.get('/esp/:what', function (req, res) {
     // cf https://stackabuse.com/get-query-strings-and-parameters-in-express-js/
     console.log(req.originalUrl);
     
