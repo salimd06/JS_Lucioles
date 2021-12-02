@@ -177,6 +177,11 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+
+//This lets you serve static files (such as HTML, CSS and JavaScript)
+//from the directory you specify. In this case, the files will be
+//served from a folder called public : 
+
 //app.use(express.static(path.join(__dirname, '/')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(request, response, next) { //Pour eviter les problemes de CORS/REST
