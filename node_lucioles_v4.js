@@ -182,8 +182,8 @@ app.use(bodyParser.json())
 //from the directory you specify. In this case, the files will be
 //served from a folder called public : 
 
-//app.use(express.static(path.join(__dirname, '/')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/')));
+//app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(request, response, next) { //Pour eviter les problemes de CORS/REST
     response.header("Access-Control-Allow-Origin", "*");
     response.header("Access-Control-Allow-Headers", "*");
@@ -198,7 +198,7 @@ app.use(function(request, response, next) { //Pour eviter les problemes de CORS/
     
 // Route / => Le node renvoie la page HTML affichant les charts
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + 'ui_lucioles.html'));
+    res.sendFile(path.join(__dirname + 'public/ui_lucioles.html'));
 });
 
 
