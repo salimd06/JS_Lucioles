@@ -75,20 +75,20 @@ function process_esp(which_esps,i){
     
     // Gestion de la temperature
     // premier appel pour eviter de devoir attendre RefreshT
-    get_samples('/esp/temp', chart1.series[i], esp);
+    get_samples('esp/temp', chart1.series[i], esp);
     //calls a function or evaluates an expression at specified
     //intervals (in milliseconds).
     window.setInterval(get_samples,
 		       refreshT,
-		       '/esp/temp',     // param 1 for get_samples()
+		       'esp/temp',     // param 1 for get_samples()
 		       chart1.series[i],// param 2 for get_samples()
 		       esp);            // param 3 for get_samples()
 
     // Gestion de la lumiere
-    get_samples('/esp/light', chart2.series[i], esp);
+    get_samples('esp/light', chart2.series[i], esp);
     window.setInterval(get_samples,
 		       refreshT,
-		       '/esp/light',     // URL to GET
+		       'esp/light',     // URL to GET
 		       chart2.series[i], // Serie to fill
 		       esp);             // ESP targeted
 }
@@ -102,8 +102,8 @@ function get_samples(path_on_node, serie, wh){
     // wh => which esp do we want to query data
 
     console.log('get samples !');
-    
-    node_url = 'https://esplucioles.herokuapp.com'
+    node_url = window.location.href;
+    //node_url = 'https://esplucioles.herokuapp.com'
     //node_url = 'http://localhost:3000'
     //node_url = 'http://134.59.131.45:3000'
     //node_url = 'http://192.168.1.101:3000'
