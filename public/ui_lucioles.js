@@ -79,7 +79,7 @@ function process_esp(which_esps,i){
     //intervals (in milliseconds).
     window.setInterval(get_samples,
 		       refreshT,
-		       '/esp/temp',     // param 1 for get_samples()
+		       'esp/temp',     // param 1 for get_samples()
 		       chart1.series[i],// param 2 for get_samples()
 		       esp);            // param 3 for get_samples()
 
@@ -87,7 +87,7 @@ function process_esp(which_esps,i){
     get_samples('/esp/light', chart2.series[i], esp);
     window.setInterval(get_samples,
 		       refreshT,
-		       '/esp/light',     // URL to GET
+		       'esp/light',     // URL to GET
 		       chart2.series[i], // Serie to fill
 		       esp);             // ESP targeted
 }
