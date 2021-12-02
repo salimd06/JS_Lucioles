@@ -61,6 +61,7 @@ function init() {
     ]
     
     for (var i = 0; i < which_esps.length; i++) {
+	console.log('process_esp : ', i)
 	process_esp(which_esps, i)
     }
 };
