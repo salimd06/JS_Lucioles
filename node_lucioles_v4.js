@@ -193,7 +193,7 @@ app.use(function(request, response, next) { //Pour eviter les problemes de CORS/
     
 // Route / => Le node renvoie la page HTML affichant les charts
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/ui_lucioles.html'));
+    res.sendFile(path.join(__dirname + 'ui_lucioles.html'));
 });
 
 
