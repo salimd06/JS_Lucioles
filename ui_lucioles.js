@@ -55,9 +55,10 @@ function init() {
 
     //=== Gestion de la flotte d'ESP =================================
     var which_esps = [
-	"80:7D:3A:FD:E8:48"
+	"24:0A:C4:61:79:A8"
 //	,"1761716416"
 //	"80:7D:3A:FD:C9:44"
+//   3C-7C-3F-EA-2D-39
     ]
     
     for (var i = 0; i < which_esps.length; i++) {
@@ -103,10 +104,12 @@ function get_samples(path_on_node, serie, wh){
 
     console.log('get samples !');
     //node_url = window.location.href;
-    node_url = 'https://esplucioles.herokuapp.com'
+    //node_url = 'https://esplucioles.herokuapp.com'
     //node_url = 'http://localhost:3000'
     //node_url = 'http://134.59.131.45:3000'
     //node_url = 'http://192.168.1.101:3000'
+   // node_url = 'http://localhost:3000'
+    node_url = 'https://iot008219m1.herokuapp.com/'
 
     //https://openclassrooms.com/fr/courses/1567926-un-site-web-dynamique-avec-jquery/1569648-le-fonctionnement-de-ajax
     $.ajax({
